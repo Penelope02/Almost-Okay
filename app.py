@@ -61,13 +61,13 @@ quotes = [
     "It’s okay to rest before you restart.",
     "Small steps still count 💛",
     "Your feelings are valid, always."
-    "Healing is not about becoming the best version of yourself. It’s about allowing the parts you’ve avoided to be loved." — Unknown
-"You don’t have to move mountains. Simply fall in love with the process of growing." — Morgan Harper Nichols
-"You are not behind. You are exactly where you need to be." — Unknown
-"One day, you will tell your story of how you overcame what you went through — and it will become someone else’s survival guide." — Brené Brown
-"Rest is not laziness, it’s medicine." — Glennon Doyle
-"The wound is the place where the light enters you." — Rumi
-"It’s okay to be a masterpiece and a work in progress at the same time." — Sophia Bush
+    "Healing is not about becoming the best version of yourself. It’s about allowing the parts you’ve avoided to be loved."  Unknown
+"You don’t have to move mountains. Simply fall in love with the process of growing."  Morgan Harper Nichols
+"You are not behind. You are exactly where you need to be." 
+"One day, you will tell your story of how you overcame what you went through - and it will become someone else’s survival guide." - Brené Brown
+"Rest is not laziness, it’s medicine." - Glennon Doyle
+"The wound is the place where the light enters you." - Rumi
+"It’s okay to be a masterpiece and a work in progress at the same time." - Sophia Bush
 ]
 st.caption(random.choice(quotes))
 
@@ -134,6 +134,7 @@ Made with calm energy in the Netherlands 🌷<br>
 © 2025 Almost Okay
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
