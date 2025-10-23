@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="Therapy Prices NL", layout="wide")
+st.set_page_config(page_title="Almost Okay", layout="wide")
 # --- CUSTOM STYLING ---
 st.markdown("""
     <style>
@@ -50,7 +50,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- HEADER ---
-st.title("🧠 Therapy Prices NL")
+st.title("🧠 Almost Okay")
 st.subheader("Find therapy that fits — transparent, simple, and stress-free.")
 st.write(
     "Compare therapists in the Netherlands by **price**, **availability**, and **specialisation** — all in one place."
@@ -97,4 +97,5 @@ This project was created to make that process easier — by putting everything i
 st.caption(
     "Information is public or user-submitted. Always confirm details directly before booking. © 2025 Therapy Prices NL"
 )
+
 
