@@ -1,7 +1,10 @@
 import streamlit as st
 import pandas as pd
+import random
 
+# --- PAGE CONFIG ---
 st.set_page_config(page_title="Almost Okay", layout="wide")
+
 # --- CUSTOM STYLING ---
 st.markdown("""
     <style>
@@ -18,7 +21,6 @@ st.markdown("""
             font-family: 'Poppins', sans-serif;
             color: #2E2E2E;
         }
-        /* Buttons */
         div.stButton > button {
             background-color: #C8D6C4;
             color: #2E2E2E;
@@ -31,17 +33,14 @@ st.markdown("""
             background-color: #E4C4B8;
             color: white;
         }
-        /* Dataframe container */
         .stDataFrame {
             border-radius: 12px;
             background-color: white;
         }
-        /* Links */
         a {
             color: #2E2E2E;
             text-decoration: underline dotted;
         }
-        /* Expander style */
         .streamlit-expanderHeader {
             font-weight: 600;
             color: #2E2E2E;
@@ -50,11 +49,31 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- HEADER ---
-st.title("🧠 Almost Okay")
-st.subheader("Find therapy that fits — transparent, simple, and stress-free.")
-st.write(
-    "Compare therapists in the Netherlands by **price**, **availability**, and **specialisation** — all in one place."
+st.markdown("<h1 style='text-align:center;'>🌞 Almost Okay</h1>", unsafe_allow_html=True)
+st.markdown(
+    "<p style='text-align:center; font-size:18px;'>A transparent guide to therapy in the Netherlands.<br>Because being almost okay is perfectly okay.</p>",
+    unsafe_allow_html=True
 )
+
+# --- CALM QUOTE ---
+quotes = [
+    "Healing isn’t linear 🌿",
+    "It’s okay to rest before you restart.",
+    "Small steps still count 💛",
+    "Your feelings are valid, always."
+]
+st.caption(random.choice(quotes))
+
+# --- WELCOME CARD ---
+st.markdown("""
+<div style="background-color:#C8D6C4;padding:15px;border-radius:15px;text-align:center;">
+<b>Welcome to Almost Okay 💚</b><br>
+We’re here to make mental health support in NL more transparent, calm, and human.<br>
+Compare prices, waiting times, and find care that fits your pace.
+</div>
+""", unsafe_allow_html=True)
+
+st.write("")
 
 # --- LOAD DATA ---
 @st.cache_data
@@ -64,7 +83,7 @@ def load_data():
 df = load_data()
 
 # --- SIDEBAR FILTERS ---
-st.sidebar.header("Filter search")
+st.sidebar.header("🪴 Filter your search")
 cities = st.sidebar.multiselect("City", sorted(df["City"].unique()))
 types = st.sidebar.multiselect("Type", sorted(df["Type"].unique()))
 max_price = st.sidebar.slider("Max price (€)", 40, 200, 120)
@@ -76,26 +95,40 @@ if types:
     filtered = filtered[filtered["Type"].isin(types)]
 filtered = filtered[filtered["Price (€)"] <= max_price]
 
-# --- DISPLAY ---
-st.dataframe(filtered.reset_index(drop=True), use_container_width=True)
+# --- TABLE DISPLAY ---
+st.markdown("### 💶 Compare Therapists")
+st.dataframe(
+    filtered.reset_index(drop=True),
+    use_container_width=True,
+    hide_index=True
+)
 
+# --- ADD YOUR PRACTICE ---
 st.markdown("---")
 st.markdown(
-    "🪴 **Know a therapist who should be here?** [Submit their details](https://forms.gle/YOUR_FORM_LINK) — it’s free to be listed."
+    "🪴 **Know a therapist who should be listed here?** [Submit their details](https://forms.gle/YOUR_FORM_LINK) — it’s free to be added to Almost Okay."
 )
 
 # --- ABOUT SECTION ---
-with st.expander("Why this exists 🌱"):
-    st.write(
-        """Finding therapy in the Netherlands can be confusing. Prices aren’t always clear, waiting times can be long, and many people give up before they even start.
-        
-This project was created to make that process easier — by putting everything in one transparent place.
-        
-💚 Built independently to help you find the right support faster."""
-    )
+st.markdown("### 🌱 Why This Exists")
+st.write(
+    """Finding therapy in the Netherlands can be confusing — prices are often unclear, and waiting times can be long.
+    
+Almost Okay was created to bring a little clarity (and calm) to the process.  
+By listing transparent information in one place, we hope to make mental health support feel more accessible and human.
 
-st.caption(
-    "Information is public or user-submitted. Always confirm details directly before booking. © 2025 Therapy Prices NL"
+💛 We believe being almost okay is still a step towards being okay."""
 )
+
+# --- FOOTER ---
+st.markdown("""
+<hr style="border:0.5px solid #EAE4D3;">
+<div style="text-align:center;color:#555;">
+Made with calm energy in the Netherlands 🌷<br>
+© 2025 Almost Okay
+</div>
+""", unsafe_allow_html=True)
+
+
 
 
