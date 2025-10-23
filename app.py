@@ -81,7 +81,16 @@ Compare prices, waiting times, and find care that fits your pace.
 """, unsafe_allow_html=True)
 
 st.write("")
+# --- ABOUT SECTION ---
+st.markdown("### 🌱 Why This Exists")
+st.write(
+    """Finding therapy in the Netherlands can be confusing — prices are often unclear, and waiting times can be long.
+    
+Almost Okay was created to bring a little clarity (and calm) to the process.  
+By listing transparent information in one place, we hope to make mental health support feel more accessible and human.
 
+💛 We believe being almost okay is still a step towards being okay."""
+)
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
@@ -116,16 +125,6 @@ st.markdown(
     "🪴 **Know a therapist who should be listed here?** [Submit their details](https://forms.gle/YOUR_FORM_LINK) — it’s free to be added to Almost Okay."
 )
 
-# --- ABOUT SECTION ---
-st.markdown("### 🌱 Why This Exists")
-st.write(
-    """Finding therapy in the Netherlands can be confusing — prices are often unclear, and waiting times can be long.
-    
-Almost Okay was created to bring a little clarity (and calm) to the process.  
-By listing transparent information in one place, we hope to make mental health support feel more accessible and human.
-
-💛 We believe being almost okay is still a step towards being okay."""
-)
 
 # --- FOOTER ---
 st.markdown("""
@@ -135,6 +134,7 @@ Made with calm energy in the Netherlands 🌷<br>
 © 2025 Almost Okay
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
