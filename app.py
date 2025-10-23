@@ -79,8 +79,6 @@ We’re here to make mental health support in NL more transparent, calm, and hum
 Compare prices, waiting times, and find care that fits your pace.
 </div>
 """, unsafe_allow_html=True)
-
-st.write("")
 # --- ABOUT SECTION ---
 st.markdown("### 🌱 Why This Exists")
 st.write(
@@ -91,6 +89,8 @@ By listing transparent information in one place, we hope to make mental health s
 
 💛 We believe being almost okay is still a step towards being okay."""
 )
+st.write("")
+
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
@@ -134,6 +134,7 @@ Made with calm energy in the Netherlands 🌷<br>
 © 2025 Almost Okay
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
