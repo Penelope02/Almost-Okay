@@ -2,6 +2,52 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(page_title="Therapy Prices NL", layout="wide")
+# --- CUSTOM STYLING ---
+st.markdown("""
+    <style>
+        /* Background + font setup */
+        [data-testid="stAppViewContainer"] {
+            background-color: #FAFAF8;
+            font-family: 'Inter', sans-serif;
+            color: #2E2E2E;
+        }
+        [data-testid="stSidebar"] {
+            background-color: #EAE4D3;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #2E2E2E;
+        }
+        /* Buttons */
+        div.stButton > button {
+            background-color: #C8D6C4;
+            color: #2E2E2E;
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            border: none;
+        }
+        div.stButton > button:hover {
+            background-color: #E4C4B8;
+            color: white;
+        }
+        /* Dataframe container */
+        .stDataFrame {
+            border-radius: 12px;
+            background-color: white;
+        }
+        /* Links */
+        a {
+            color: #2E2E2E;
+            text-decoration: underline dotted;
+        }
+        /* Expander style */
+        .streamlit-expanderHeader {
+            font-weight: 600;
+            color: #2E2E2E;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # --- HEADER ---
 st.title("🧠 Therapy Prices NL")
@@ -51,3 +97,4 @@ This project was created to make that process easier — by putting everything i
 st.caption(
     "Information is public or user-submitted. Always confirm details directly before booking. © 2025 Therapy Prices NL"
 )
+
