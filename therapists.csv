@@ -1,0 +1,5 @@
+Name,City,Type,Price (€),Waiting time (weeks),Website,Accepting clients
+Anna Janssen,Amsterdam,Clinical Psychologist,90,2,https://example.com,Yes
+Tom de Vries,Rotterdam,Counsellor,75,1,https://example.com,Yes
+Sarah Bakker,Utrecht,Psychologist,100,4,https://example.com,No
+Marieke Visser,The Hague,Coach,65,0,https://example.com,Yes
