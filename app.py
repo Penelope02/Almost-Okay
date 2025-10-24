@@ -50,18 +50,19 @@ st.markdown("""
 
 
 # --- LOGO & HEADER ---
+st.markdown("<div style='text-align:center; padding-top:20px;'>", unsafe_allow_html=True)
+st.image("Logo.png", width=250)  # <-- uses Streamlit’s file server
 st.markdown(
     """
-    <div style="text-align:center; padding-top:20px; padding-bottom:10px;">
-        <img src="Logo.png" width="250" alt="Almost Okay Logo"><br>
-        <p style="font-size:18px; color:#4a4a4a; font-family:'Inter', sans-serif; margin-top:15px;">
-            A transparent guide to therapy in the Netherlands.<br>
-            Because being almost okay is perfectly okay 🌷
-        </p>
-    </div>
+    <p style="font-size:18px; color:#4a4a4a; font-family:'Inter', sans-serif; margin-top:15px; text-align:center;">
+        A transparent guide to therapy in the Netherlands.<br>
+        Because being almost okay is perfectly okay 🌷
+    </p>
     """,
     unsafe_allow_html=True
 )
+st.markdown("</div>", unsafe_allow_html=True)
+
 
 
 # --- CALM QUOTE ---
@@ -149,6 +150,7 @@ Made with calm energy in the Netherlands 🌷<br>
 © 2025 Almost Okay
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
