@@ -8,14 +8,14 @@ st.set_page_config(page_title="Almost Okay", layout="wide")
 # --- CUSTOM STYLING ---
 st.markdown("""
     <style>
-        /* Background + font setup */
+        /* Background + fonts */
         [data-testid="stAppViewContainer"] {
-            background-color: #FAFAF8;
+            background-color: #FFF9F3; /* soft cream to match logo */
             font-family: 'Inter', sans-serif;
             color: #2E2E2E;
         }
         [data-testid="stSidebar"] {
-            background-color: #EAE4D3;
+            background-color: #F5EBDD;
         }
         h1, h2, h3 {
             font-family: 'Poppins', sans-serif;
@@ -48,12 +48,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- HEADER ---
-st.markdown("<h1 style='text-align:center;'>🌞 Almost Okay</h1>", unsafe_allow_html=True)
+
+# --- LOGO & HEADER ---
 st.markdown(
-    "<p style='text-align:center; font-size:18px;'>A transparent guide to therapy in the Netherlands.<br>Because being almost okay is perfectly okay.</p>",
+    """
+    <div style="text-align:center; padding-top:20px; padding-bottom:10px;">
+        <img src="logo.png" width="250" alt="Almost Okay Logo"><br>
+        <p style="font-size:18px; color:#4a4a4a; font-family:'Inter', sans-serif; margin-top:15px;">
+            A transparent guide to therapy in the Netherlands.<br>
+            Because being almost okay is perfectly okay 🌷
+        </p>
+    </div>
+    """,
     unsafe_allow_html=True
 )
+
 
 # --- CALM QUOTE ---
 quotes = [
@@ -61,24 +70,26 @@ quotes = [
     "It's okay to rest before you restart.",
     "Small steps still count 💛",
     "Your feelings are valid, always.",
-    "You don't have to move mountains. Simply fall in love with the process of growing. - Morgan Harper Nichols",
+    "You don't have to move mountains. Simply fall in love with the process of growing. – Morgan Harper Nichols",
     "You are not behind. You are exactly where you need to be.",
-    "One day, you will tell your story of how you overcame what you went through - and it will become someone else's survival guide. - Brene Brown",
-    "Rest is not laziness, it's medicine. - Glennon Doyle",
-    "The wound is the place where the light enters you. - Rumi",
-    "It's okay to be a masterpiece and a work in progress at the same time. - Sophia Bush",
+    "One day, you will tell your story of how you overcame what you went through – and it will become someone else's survival guide. – Brené Brown",
+    "Rest is not laziness, it's medicine. – Glennon Doyle",
+    "The wound is the place where the light enters you. – Rumi",
+    "It's okay to be a masterpiece and a work in progress at the same time. – Sophia Bush",
 ]
-
 st.caption(random.choice(quotes))
+
 
 # --- WELCOME CARD ---
 st.markdown("""
-<div style="background-color:#C8D6C4;padding:15px;border-radius:15px;text-align:center;">
-<b>Welcome to Almost Okay 💚</b><br>
+<div style="background-color:#F3E6D8;padding:15px;border-radius:15px;text-align:center; margin-bottom:20px;">
+<b>Welcome to Almost Okay 💛</b><br>
 We’re here to make mental health support in NL more transparent, calm, and human.<br>
 Compare prices, waiting times, and find care that fits your pace.
 </div>
 """, unsafe_allow_html=True)
+
+
 # --- ABOUT SECTION ---
 st.markdown("### 🌱 Why This Exists")
 st.write(
@@ -91,12 +102,14 @@ By listing transparent information in one place, we hope to make mental health s
 )
 st.write("")
 
+
 # --- LOAD DATA ---
 @st.cache_data
 def load_data():
     return pd.read_csv("therapists.csv")
 
 df = load_data()
+
 
 # --- SIDEBAR FILTERS ---
 st.sidebar.header("🪴 Filter your search")
@@ -111,6 +124,7 @@ if types:
     filtered = filtered[filtered["Type"].isin(types)]
 filtered = filtered[filtered["Price (€)"] <= max_price]
 
+
 # --- TABLE DISPLAY ---
 st.markdown("### 💶 Compare Therapists")
 st.dataframe(
@@ -118,6 +132,7 @@ st.dataframe(
     use_container_width=True,
     hide_index=True
 )
+
 
 # --- ADD YOUR PRACTICE ---
 st.markdown("---")
