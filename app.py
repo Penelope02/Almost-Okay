@@ -53,7 +53,7 @@ st.markdown("""
 st.markdown(
     """
     <div style="text-align:center; padding-top:20px; padding-bottom:10px;">
-        <img src="logo.png" width="250" alt="Almost Okay Logo"><br>
+        <img src="Logo.png" width="250" alt="Almost Okay Logo"><br>
         <p style="font-size:18px; color:#4a4a4a; font-family:'Inter', sans-serif; margin-top:15px;">
             A transparent guide to therapy in the Netherlands.<br>
             Because being almost okay is perfectly okay 🌷
@@ -149,6 +149,7 @@ Made with calm energy in the Netherlands 🌷<br>
 © 2025 Almost Okay
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
