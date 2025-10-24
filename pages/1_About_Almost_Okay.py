@@ -1,3 +1,4 @@
+import streamlit as st
 st.write(
     """Finding therapy in the Netherlands can be confusing — prices are often unclear, and waiting times can be long.
     
@@ -6,3 +7,4 @@ By listing transparent information in one place, we hope to make mental health s
 
 💛 We believe being almost okay is still a step towards being okay."""
 )
+
